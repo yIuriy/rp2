@@ -23,7 +23,7 @@ public class CursoServiceTest {
 
     // REQUISITO: Criar novos cursos (Professor)
     @Test
-    void criarCursoDeveAdicionarNovoCursoAPersistencia() {
+    void criarCursoDeveAdicionarNovoCursoAPersistencia() { // Lucas
         // TODO: Testar a criação de um novo curso:
         // 1. Verificar se o novo curso não é nulo.
         // 2. Verificar se o título e a descrição estão corretos.
@@ -33,7 +33,7 @@ public class CursoServiceTest {
 
     // REQUISITO: Editar cursos existentes (Professor/Admin)
     @Test
-    void editarCursoDeveAtualizarTituloEDescricao() {
+    void editarCursoDeveAtualizarTituloEDescricao() { // Lucas
         // TODO: Testar a edição de um curso existente (ex: "c1"):
         // 1. Chamar editarCurso() e verificar se o retorno é 'true'.
         // 2. Recuperar o curso na persistência (dataManager).
@@ -42,7 +42,7 @@ public class CursoServiceTest {
 
     // REQUISITO: Configurar proteção por PIN de acesso (Professor)
     @Test
-    void configurarPinDeveAdicionarPinAoCurso() {
+    void configurarPinDeveAdicionarPinAoCurso() { // Lucas
         // TODO: Testar a configuração de PIN em um curso (ex: "c1"):
         // 1. Chamar configurarPin() e verificar se o retorno é 'true'.
         // 2. Recuperar o curso na persistência (dataManager).
@@ -51,7 +51,7 @@ public class CursoServiceTest {
 
     // REQUISITO: Aprovar/rejeitar cursos (Administrador)
     @Test
-    void aprovarCursoDeveMudarStatusParaAtivo() {
+    void aprovarCursoDeveMudarStatusParaAtivo() { // Lucas
         // TODO: Testar a aprovação de um curso PENDENTE (ex: "c2"):
         // 1. Chamar aprovarCurso() e verificar se o retorno é 'true'.
         // 2. Recuperar o curso na persistência (dataManager).
@@ -59,7 +59,7 @@ public class CursoServiceTest {
     }
 
     @Test
-    void rejeitarCursoDeveMudarStatusParaInativo() {
+    void rejeitarCursoDeveMudarStatusParaInativo() { // Raphael
         // TODO: Testar a rejeição de um curso (ex: "c1"):
         // 1. Chamar rejeitarCurso() e verificar se o retorno é 'true'.
         // 2. Recuperar o curso na persistência (dataManager).
@@ -68,7 +68,7 @@ public class CursoServiceTest {
 
     // REQUISITO: Visualizar catálogo de cursos disponíveis (Estudante/Comum)
     @Test
-    void visualizarCatalogoDeveRetornarApenasCursosAtivos() {
+    void visualizarCatalogoDeveRetornarApenasCursosAtivos() { // Raphael
         // TODO: Testar a visualização do catálogo:
         // 1. Chamar visualizarCatalogo().
         // 2. Verificar se a lista retornada contém APENAS cursos com StatusCurso.ATIVO.
@@ -77,7 +77,7 @@ public class CursoServiceTest {
 
     // REQUISITO: Ingressar em cursos (com inserção de PIN quando necessário)
     @Test
-    void ingressarCursoComPinDeveFuncionarComPinCorreto() {
+    void ingressarCursoComPinDeveFuncionarComPinCorreto() { // Raphael
         // TODO: Testar o ingresso em um curso com PIN (ex: "c2"):
         // 1. Garantir que o curso está ATIVO (configurar se necessário).
         // 2. Chamar ingressarCurso() com o PIN CORRETO.
@@ -85,7 +85,7 @@ public class CursoServiceTest {
     }
 
     @Test
-    void ingressarCursoComPinDeveFalharComPinIncorreto() {
+    void ingressarCursoComPinDeveFalharComPinIncorreto() { // Raphael
         // TODO: Testar o ingresso em um curso com PIN (ex: "c2"):
         // 1. Garantir que o curso está ATIVO (configurar se necessário).
         // 2. Chamar ingressarCurso() com um PIN INCORRETO.
@@ -93,7 +93,7 @@ public class CursoServiceTest {
     }
 
     @Test
-    void ingressarCursoSemPinDeveFuncionar() {
+    void ingressarCursoSemPinDeveFuncionar() { // Iuri
         // TODO: Testar o ingresso em um curso SEM PIN (ex: "c1"):
         // 1. Chamar ingressarCurso() passando 'null' ou uma string vazia como PIN.
         // 2. Verificar se o retorno é 'true'.

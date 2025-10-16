@@ -7,6 +7,7 @@ import service.UsuarioService;
 
 import java.util.List;
 import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -25,7 +26,7 @@ public class UsuarioServiceTest {
 
     // REQUISITO: Visualizar todos os usuários cadastrados
     @Test
-    void visualizarTodosDeveRetornarQuatroUsuariosIniciais() {
+    void visualizarTodosDeveRetornarQuatroUsuariosIniciais() { // Dyonathan
         // TODO: Testar a visualização de todos os usuários:
         // 1. Chamar visualizarTodos().
         // 2. Verificar se a lista retornada tem o tamanho esperado (4 nos dados iniciais).
@@ -33,7 +34,7 @@ public class UsuarioServiceTest {
 
     // REQUISITO: Alterar níveis de acesso (Admin)
     @Test
-    void alterarNivelAcessoDeveMudarOModeloDeUsuario() {
+    void alterarNivelAcessoDeveMudarOModeloDeUsuario() { // Dyonathan
         // TODO: Testar a alteração do nível de acesso de um usuário existente (ex: "u3" para PROFESSOR):
         // 1. Chamar alterarNivelAcesso() e verificar se retorna 'true'.
         // 2. Recuperar o usuário na persistência (dataManager).
@@ -41,7 +42,7 @@ public class UsuarioServiceTest {
     }
 
     @Test
-    void alterarNivelAcessoInexistenteDeveFalhar() {
+    void alterarNivelAcessoInexistenteDeveFalhar() { // Dyonathan
         // TODO: Testar a alteração do nível de acesso para um usuário inexistente:
         // 1. Chamar alterarNivelAcesso() com um ID inexistente (ex: "u999").
         // 2. Verificar se o retorno é 'false'.
@@ -49,21 +50,21 @@ public class UsuarioServiceTest {
 
     // REQUISITO: Filtrar e buscar usuários por nome, email ou papel (Admin)
     @Test
-    void buscarUsuariosDeveFiltrarPorNome() {
+    void buscarUsuariosDeveFiltrarPorNome() { // Guilherme
         // TODO: Testar a busca de usuários por parte do nome (ex: "ana"):
         // 1. Chamar buscarUsuarios("ana", null).
         // 2. Verificar se a lista retornada tem o tamanho correto (1) e o nome do usuário está correto.
     }
 
     @Test
-    void buscarUsuariosDeveFiltrarPorEmail() {
+    void buscarUsuariosDeveFiltrarPorEmail() { // Guilherme
         // TODO: Testar a busca de usuários por parte do email (ex: "@codefolio.com"):
         // 1. Chamar buscarUsuarios("@codefolio.com", null).
         // 2. Verificar se a lista retornada tem o tamanho correto (4).
     }
 
     @Test
-    void buscarUsuariosDeveFiltrarPorPapel() {
+    void buscarUsuariosDeveFiltrarPorPapel() { // Guilherme
         // TODO: Testar a busca de usuários por PapelUsuario (ex: PROFESSOR):
         // 1. Chamar buscarUsuarios(null, PapelUsuario.PROFESSOR).
         // 2. Verificar se a lista retornada tem o tamanho correto (1) e o papel do usuário está correto.
@@ -71,14 +72,14 @@ public class UsuarioServiceTest {
 
     // REQUISITO: Ordenar usuários por diferentes critérios (Admin)
     @Test
-    void ordenarUsuariosPorNomeDeveFuncionar() {
+    void ordenarUsuariosPorNomeDeveFuncionar() { // Luiz
         // TODO: Testar a ordenação de usuários por nome:
         // 1. Chamar ordenarUsuarios("nome").
         // 2. Verificar se os primeiros elementos da lista estão na ordem alfabética esperada (ex: "Ana Admin", "Bruno Professor").
     }
 
     @Test
-    void ordenarUsuariosPorPapelDeveFuncionar() {
+    void ordenarUsuariosPorPapelDeveFuncionar() { // Luiz
         // TODO: Testar a ordenação de usuários por papel:
         // 1. Chamar ordenarUsuarios("papel").
         // 2. Verificar se os primeiros elementos da lista estão na ordem de papel esperada (ex: USUARIO_COMUM, ESTUDANTE).
@@ -86,7 +87,7 @@ public class UsuarioServiceTest {
 
     // REQUISITO: Editar informações pessoais (Usuário Comum)
     @Test
-    void editarPerfilDeveMudarONomeDoUsuario() {
+    void editarPerfilDeveMudarONomeDoUsuario() { // Luiz
         // TODO: Testar a edição de informações de perfil (ex: mudar o nome do "u4"):
         // 1. Chamar editarPerfil() e verificar se retorna 'true'.
         // 2. Recuperar o usuário na persistência (dataManager).

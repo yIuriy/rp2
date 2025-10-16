@@ -23,7 +23,7 @@ public class PostServiceTest {
 
     // REQUISITO: Visualizar posts/artigos (Usuário Comum)
     @Test
-    void visualizarTodosDeveRetornarTodosOsPostsIniciais() {
+    void visualizarTodosDeveRetornarTodosOsPostsIniciais() { // Iuri
         // TODO: Testar a visualização de todos os posts:
         // 1. Chamar visualizarTodos().
         // 2. Verificar se a lista retornada tem o tamanho esperado (2 nos dados iniciais).
@@ -31,7 +31,7 @@ public class PostServiceTest {
 
     // REQUISITO: Remover posts inadequados (Administrador)
     @Test
-    void removerPostDeveRemoverPostExistente() {
+    void removerPostDeveRemoverPostExistente() { // Iuri
         // TODO: Testar a remoção de um post existente (ex: "p1"):
         // 1. Armazenar o tamanho inicial da lista de posts.
         // 2. Chamar removerPost("p1") e verificar se retorna 'true'.
@@ -40,7 +40,7 @@ public class PostServiceTest {
     }
 
     @Test
-    void removerPostInexistenteDeveRetornarFalso() {
+    void removerPostInexistenteDeveRetornarFalso() { // Iuri
         // TODO: Testar a remoção de um post que não existe:
         // 1. Chamar removerPost() com um ID inexistente (ex: "p999").
         // 2. Verificar se o retorno é 'false'.
@@ -48,7 +48,7 @@ public class PostServiceTest {
 
     // REQUISITO: Curtir/descurtir posts (Usuário Comum)
     @Test
-    void curtirPostDeveIncrementarContadorDeCurtidas() {
+    void curtirPostDeveIncrementarContadorDeCurtidas() { // Gustavo
         // TODO: Testar a função de curtir post (ex: "p2"):
         // 1. Obter o número de curtidas iniciais do post.
         // 2. Chamar curtirPost("p2") e verificar se retorna 'true'.
@@ -57,7 +57,7 @@ public class PostServiceTest {
 
     // REQUISITO: Filtrar artigos por temas/tags (Usuário Comum)
     @Test
-    void filtrarPorTagDeveRetornarPostsComTagCorrespondente() {
+    void filtrarPorTagDeveRetornarPostsComTagCorrespondente() { // Gustavo
         // TODO: Testar a filtragem por uma tag existente (ex: "Java"):
         // 1. Chamar filtrarPorTag() com a tag.
         // 2. Verificar se a lista retornada tem o tamanho esperado (1).
@@ -65,14 +65,14 @@ public class PostServiceTest {
     }
 
     @Test
-    void filtrarPorTagDeveIgnorarCaseSensitivity() {
+    void filtrarPorTagDeveIgnorarCaseSensitivity() { // Gustavo
         // TODO: Testar a filtragem com uma tag existente, usando case insensível (ex: "java"):
         // 1. Chamar filtrarPorTag() com a tag em minúsculas ou maiúsculas.
         // 2. Verificar se o resultado é o mesmo do teste anterior.
     }
 
     @Test
-    void filtrarPorTagInexistenteDeveRetornarListaVazia() {
+    void filtrarPorTagInexistenteDeveRetornarListaVazia() { // Gustavo
         // TODO: Testar a filtragem por uma tag que não existe (ex: "Python"):
         // 1. Chamar filtrarPorTag() com a tag inexistente.
         // 2. Verificar se a lista retornada está vazia (isEmpty() == true).
@@ -80,7 +80,7 @@ public class PostServiceTest {
 
     // REQUISITO: Visualizar métricas de engajamento (Administrador)
     @Test
-    void getCurtidasTotaisDeveRetornarSomaCorreta() {
+    void getCurtidasTotaisDeveRetornarSomaCorreta() { // Dyonathan
         // TODO: Testar o cálculo do total de curtidas:
         // 1. Chamar getCurtidasTotais() e verificar se o total inicial é correto (2).
         // 2. Simular uma nova interação (ex: curtirPost("p2")).
