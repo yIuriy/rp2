@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3590f16-b743-46c4-a62e-f7306f2c9cec" name="Changes" comment="" />
+    <list default="true" id="b3590f16-b743-46c4-a62e-f7306f2c9cec" name="Changes" comment="Added the name of person related to each test method">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CursoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CursoServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PostServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PostServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +29,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.MainApp.executor": "Run",
+    "JUnit.CursoServiceTest.ingressarCursoSemPinDeveFuncionar.executor": "Run",
+    "JUnit.PostServiceTest.removerPostDeveRemoverPostExistente.executor": "Run",
+    "JUnit.PostServiceTest.visualizarTodosDeveRetornarTodosOsPostsIniciais.executor": "Run",
     "Maven.CodefolioLite [test].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -36,6 +43,66 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RunManager" selected="JUnit.PostServiceTest">
+    <configuration name="CursoServiceTest.ingressarCursoSemPinDeveFuncionar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodefolioLite" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CursoServiceTest" />
+      <option name="METHOD_NAME" value="ingressarCursoSemPinDeveFuncionar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodefolioLite" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PostServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostServiceTest.removerPostDeveRemoverPostExistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodefolioLite" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PostServiceTest" />
+      <option name="METHOD_NAME" value="removerPostDeveRemoverPostExistente" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostServiceTest.removerPostInexistenteDeveRetornarFalso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodefolioLite" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PostServiceTest" />
+      <option name="METHOD_NAME" value="removerPostInexistenteDeveRetornarFalso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostServiceTest.visualizarTodosDeveRetornarTodosOsPostsIniciais" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodefolioLite" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PostServiceTest" />
+      <option name="METHOD_NAME" value="visualizarTodosDeveRetornarTodosOsPostsIniciais" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PostServiceTest" />
+        <item itemvalue="JUnit.PostServiceTest.removerPostInexistenteDeveRetornarFalso" />
+        <item itemvalue="JUnit.PostServiceTest.removerPostDeveRemoverPostExistente" />
+        <item itemvalue="JUnit.PostServiceTest.visualizarTodosDeveRetornarTodosOsPostsIniciais" />
+        <item itemvalue="JUnit.CursoServiceTest.ingressarCursoSemPinDeveFuncionar" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b3590f16-b743-46c4-a62e-f7306f2c9cec" name="Changes" comment="" />
@@ -44,6 +111,19 @@
       <option name="presentableId" value="Default" />
       <updated>1760443760320</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added the name of person related to each test method">
+      <option name="closed" value="true" />
+      <created>1760614515421</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760614515421</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added the name of person related to each test method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the name of person related to each test method" />
   </component>
 </project>

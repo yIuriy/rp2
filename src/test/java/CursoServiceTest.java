@@ -7,6 +7,7 @@ import service.JsonDataManager;
 
 import java.util.List;
 import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -96,6 +97,8 @@ public class CursoServiceTest {
     void ingressarCursoSemPinDeveFuncionar() { // Iuri
         // TODO: Testar o ingresso em um curso SEM PIN (ex: "c1"):
         // 1. Chamar ingressarCurso() passando 'null' ou uma string vazia como PIN.
+        boolean ingressouNoCurso = cursoService.ingressarCurso("c1", null);
         // 2. Verificar se o retorno é 'true'.
+        assertTrue(ingressouNoCurso);
     }
 }
