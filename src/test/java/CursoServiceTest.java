@@ -6,10 +6,8 @@ import service.CursoService;
 import service.JsonDataManager;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 public class CursoServiceTest {
 
@@ -62,35 +60,69 @@ public class CursoServiceTest {
     @Test
     void rejeitarCursoDeveMudarStatusParaInativo() { // Raphael
         // TODO: Testar a rejeição de um curso (ex: "c1"):
+
         // 1. Chamar rejeitarCurso() e verificar se o retorno é 'true'.
+        boolean cursoFoiRejeitado = cursoService.rejeitarCurso("c1");
+        assertTrue(cursoFoiRejeitado);
+
         // 2. Recuperar o curso na persistência (dataManager).
+        List<Curso> cursos = dataManager.getCursos();
+
         // 3. Verificar se o status do curso mudou para INATIVO.
+        Curso cursoRejeitado = cursos.getFirst();
+        assertEquals(StatusCurso.INATIVO, cursoRejeitado.getStatus());
+
     }
 
     // REQUISITO: Visualizar catálogo de cursos disponíveis (Estudante/Comum)
     @Test
     void visualizarCatalogoDeveRetornarApenasCursosAtivos() { // Raphael
         // TODO: Testar a visualização do catálogo:
+
         // 1. Chamar visualizarCatalogo().
+        List<Curso> catalogo = cursoService.visualizarCatalogo();
+        int tamanhoCatalogoInicial = catalogo.size();
+
         // 2. Verificar se a lista retornada contém APENAS cursos com StatusCurso.ATIVO.
+        int count = 0;
+        for (Curso curso : catalogo) {
+            assertEquals(StatusCurso.ATIVO, curso.getStatus());
+            if (curso.getStatus().equals(StatusCurso.ATIVO)) count++;
+        }
+
         // 3. Verificar se o tamanho da lista está correto (baseado nos dados iniciais).
+        assertEquals(tamanhoCatalogoInicial, count);
     }
 
     // REQUISITO: Ingressar em cursos (com inserção de PIN quando necessário)
     @Test
     void ingressarCursoComPinDeveFuncionarComPinCorreto() { // Raphael
         // TODO: Testar o ingresso em um curso com PIN (ex: "c2"):
+
         // 1. Garantir que o curso está ATIVO (configurar se necessário).
+        List<Curso> cursos = dataManager.getCursos();
+        cursos.get(1).setStatus(StatusCurso.ATIVO);
+
         // 2. Chamar ingressarCurso() com o PIN CORRETO.
+        boolean ingressouNoCurso = cursoService.ingressarCurso("c2", "1234");
+
         // 3. Verificar se o retorno é 'true'.
+        assertTrue(ingressouNoCurso);
     }
 
     @Test
     void ingressarCursoComPinDeveFalharComPinIncorreto() { // Raphael
         // TODO: Testar o ingresso em um curso com PIN (ex: "c2"):
+
         // 1. Garantir que o curso está ATIVO (configurar se necessário).
+        List<Curso> cursos = dataManager.getCursos();
+        cursos.get(1).setStatus(StatusCurso.ATIVO);
+
         // 2. Chamar ingressarCurso() com um PIN INCORRETO.
+        boolean ingressouNoCurso = cursoService.ingressarCurso("c2", "4321");
+
         // 3. Verificar se o retorno é 'false'.
+        assertFalse(ingressouNoCurso);
     }
 
     @Test

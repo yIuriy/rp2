@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3590f16-b743-46c4-a62e-f7306f2c9cec" name="Changes" comment="Added mine test methods" />
+    <list default="true" id="b3590f16-b743-46c4-a62e-f7306f2c9cec" name="Changes" comment="Preenchimento dos testes rejeitarCurso, visualizarCatalogo, ingressarComPinCorreto e ingressarComPinIncorreto">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CursoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CursoServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +16,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "RaphaelAmaralNunes"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/yIuriy/rp2.git",
+    "accountId": "1525085c-8309-40a0-867b-5a9b2d05ae98"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -25,7 +40,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.MainApp.executor": "Run",
+    "JUnit.CursoServiceTest.executor": "Run",
     "JUnit.CursoServiceTest.ingressarCursoSemPinDeveFuncionar.executor": "Run",
+    "JUnit.CursoServiceTest.rejeitarCursoDeveMudarStatusParaInativo.executor": "Run",
     "JUnit.PostServiceTest.executor": "Run",
     "JUnit.PostServiceTest.removerPostDeveRemoverPostExistente.executor": "Run",
     "JUnit.PostServiceTest.removerPostInexistenteDeveRetornarFalso.executor": "Run",
@@ -41,12 +58,21 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.PostServiceTest">
-    <configuration name="CursoServiceTest.ingressarCursoSemPinDeveFuncionar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CursoServiceTest">
+    <configuration name="CursoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodefolioLite" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CursoServiceTest" />
-      <option name="METHOD_NAME" value="ingressarCursoSemPinDeveFuncionar" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CursoServiceTest.rejeitarCursoDeveMudarStatusParaInativo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodefolioLite" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CursoServiceTest" />
+      <option name="METHOD_NAME" value="rejeitarCursoDeveMudarStatusParaInativo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -81,26 +107,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostServiceTest.visualizarTodosDeveRetornarTodosOsPostsIniciais" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodefolioLite" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PostServiceTest" />
-      <option name="METHOD_NAME" value="visualizarTodosDeveRetornarTodosOsPostsIniciais" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CursoServiceTest" />
         <item itemvalue="JUnit.PostServiceTest" />
+        <item itemvalue="JUnit.CursoServiceTest.rejeitarCursoDeveMudarStatusParaInativo" />
         <item itemvalue="JUnit.PostServiceTest.removerPostInexistenteDeveRetornarFalso" />
         <item itemvalue="JUnit.PostServiceTest.removerPostDeveRemoverPostExistente" />
-        <item itemvalue="JUnit.PostServiceTest.visualizarTodosDeveRetornarTodosOsPostsIniciais" />
-        <item itemvalue="JUnit.CursoServiceTest.ingressarCursoSemPinDeveFuncionar" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b3590f16-b743-46c4-a62e-f7306f2c9cec" name="Changes" comment="" />
@@ -131,6 +148,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added the name of person related to each test method" />
     <MESSAGE value="Added mine test methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added mine test methods" />
+    <MESSAGE value="Preenchimento dos testes rejeitarCurso, visualizarCatalogo, ingressarComPinCorreto e ingressarComPinIncorreto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preenchimento dos testes rejeitarCurso, visualizarCatalogo, ingressarComPinCorreto e ingressarComPinIncorreto" />
   </component>
 </project>
