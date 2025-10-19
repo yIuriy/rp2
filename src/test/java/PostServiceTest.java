@@ -24,26 +24,18 @@ public class PostServiceTest {
     // REQUISITO: Visualizar posts/artigos (Usuário Comum)
     @Test
     void visualizarTodosDeveRetornarTodosOsPostsIniciais() { // Iuri
-        // TODO: Testar a visualização de todos os posts:
-        // 1. Chamar visualizarTodos().
         List<Post> todosPostsRetornados = postService.visualizarTodos();
-        // 2. Verificar se a lista retornada tem o tamanho esperado (2 nos dados iniciais).
         assertEquals(2, todosPostsRetornados.size());
     }
 
     // REQUISITO: Remover posts inadequados (Administrador)
     @Test
     void removerPostDeveRemoverPostExistente() { // Iuri
-        // TODO: Testar a remoção de um post existente (ex: "p1"):
-        // 1. Armazenar o tamanho inicial da lista de posts.
         int sizeTodosPostsInicial = postService.visualizarTodos().size();
-        // 2. Chamar removerPost("p1") e verificar se retorna 'true'.
         boolean postRemovido = postService.removerPost("p1");
         assertTrue(postRemovido);
         int sizeTodosPostFinal = postService.visualizarTodos().size();
-        // 3. Verificar se o tamanho da lista diminuiu em 1.
         assertEquals(sizeTodosPostsInicial - 1, sizeTodosPostFinal);
-        // 4. Garantir que o post "p1" não existe mais na persistência (dataManager).
         boolean aindaEstaPresente = dataManager.getPosts().stream().anyMatch(
                 post -> post.getId().equals("p1")
         );
@@ -53,9 +45,7 @@ public class PostServiceTest {
     @Test
     void removerPostInexistenteDeveRetornarFalso() { // Iuri
         // TODO: Testar a remoção de um post que não existe:
-        // 1. Chamar removerPost() com um ID inexistente (ex: "p999").
         boolean postRemovido = postService.removerPost("p999");
-        // 2. Verificar se o retorno é 'false'.
         assertFalse(postRemovido);
     }
 
