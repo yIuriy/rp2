@@ -27,35 +27,23 @@ public class UsuarioServiceTest {
     // REQUISITO: Visualizar todos os usuários cadastrados
     @Test
     void visualizarTodosDeveRetornarQuatroUsuariosIniciais() { // Dyonathan
-        // TODO: Testar a visualização de todos os usuários:
-        // 1. Chamar visualizarTodos().
-        // 2. Verificar se a lista retornada tem o tamanho esperado (4 nos dados iniciais).
         assertEquals(4, usuarioService.visualizarTodos().size());
     }
 
     // REQUISITO: Alterar níveis de acesso (Admin)
     @Test
     void alterarNivelAcessoDeveMudarOModeloDeUsuario() { // Dyonathan
-        // TODO: Testar a alteração do nível de acesso de um usuário existente (ex: "u3" para PROFESSOR):
-        // 1. Chamar alterarNivelAcesso() e verificar se retorna 'true'.
         assertTrue(usuarioService.alterarNivelAcesso("u3", PapelUsuario.PROFESSOR));
-
-        // 2. Recuperar o usuário na persistência (dataManager).
-        // 3. Verificar se o PapelUsuario foi alterado corretamente para o novo papel.
         List<Usuario> users= dataManager.getUsuarios();
         for(Usuario user : users) {
             if (user.getId().equals("u3")) {
                 assertEquals(PapelUsuario.PROFESSOR, user.getPapel());
             }
         }
-
     }
 
     @Test
     void alterarNivelAcessoInexistenteDeveFalhar() { // Dyonathan
-        // TODO: Testar a alteração do nível de acesso para um usuário inexistente:
-        // 1. Chamar alterarNivelAcesso() com um ID inexistente (ex: "u999").
-        // 2. Verificar se o retorno é 'false'.
         assertFalse(usuarioService.alterarNivelAcesso("bah, tá loko", PapelUsuario.PROFESSOR));
     }
 
