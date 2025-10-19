@@ -23,38 +23,81 @@ public class CursoServiceTest {
     // REQUISITO: Criar novos cursos (Professor)
     @Test
     void criarCursoDeveAdicionarNovoCursoAPersistencia() { // Lucas
-        // TODO: Testar a criação de um novo curso:
-        // 1. Verificar se o novo curso não é nulo.
-        // 2. Verificar se o título e a descrição estão corretos.
-        // 3. Confirmar que o status inicial é PENDENTE_APROVACAO.
-        // 4. Garantir que o tamanho da lista de cursos aumentou em 1.
+        int tamanhoInicial = dataManager.getCursos().size();
+        String titulo = "Curso de Testes Unitários";
+        String desc = "Aprendendo JUnit 5";
+        String profId = "prof-junit";
+
+        Curso novoCurso = cursoService.criarCurso(titulo, desc, profId);
+
+        assertNotNull(novoCurso);
+        assertNotNull(novoCurso.getId());
+
+        Curso cursoPersistido = dataManager.getCursoById(novoCurso.getId());
+        assertNotNull(cursoPersistido);
+
+        assertEquals(titulo, cursoPersistido.getTitulo());
+        assertEquals(desc, cursoPersistido.getDescricao());
+
+        assertEquals(StatusCurso.PENDENTE_APROVACAO, cursoPersistido.getStatus());
+
+        int tamanhoFinal = dataManager.getCursos().size();
+        assertEquals(tamanhoInicial + 1, tamanhoFinal);
     }
 
     // REQUISITO: Editar cursos existentes (Professor/Admin)
     @Test
     void editarCursoDeveAtualizarTituloEDescricao() { // Lucas
-        // TODO: Testar a edição de um curso existente (ex: "c1"):
-        // 1. Chamar editarCurso() e verificar se o retorno é 'true'.
-        // 2. Recuperar o curso na persistência (dataManager).
-        // 3. Verificar se o título e a descrição foram atualizados corretamente.
+        Curso cursoBase = cursoService.criarCurso("Título Antigo", "Descrição Antiga", "prof-1");
+        String idCurso = cursoBase.getId();
+        String novoTitulo = "Título Atualizado";
+        String novaDescricao = "Descrição Atualizada";
+
+        boolean sucesso = cursoService.editarCurso(idCurso, novoTitulo, novaDescricao);
+
+        assertTrue(sucesso);
+
+        Curso cursoAtualizado = dataManager.getCursoById(idCurso);
+        assertNotNull(cursoAtualizado);
+
+        assertEquals(novoTitulo, cursoAtualizado.getTitulo());
+        assertEquals(novaDescricao, cursoAtualizado.getDescricao());
     }
 
     // REQUISITO: Configurar proteção por PIN de acesso (Professor)
     @Test
     void configurarPinDeveAdicionarPinAoCurso() { // Lucas
-        // TODO: Testar a configuração de PIN em um curso (ex: "c1"):
-        // 1. Chamar configurarPin() e verificar se o retorno é 'true'.
-        // 2. Recuperar o curso na persistência (dataManager).
-        // 3. Verificar se o PIN foi adicionado/configurado corretamente.
+        Curso cursoBase = cursoService.criarCurso("Curso Protegido", "Desc", "prof-2");
+        String idCurso = cursoBase.getId();
+        String novoPin = "9876";
+
+        assertNull(cursoBase.getPinAcesso());
+
+        boolean sucesso = cursoService.configurarPin(idCurso, novoPin);
+        assertTrue(sucesso);
+
+        Curso cursoAtualizado = dataManager.getCursoById(idCurso);
+        assertNotNull(cursoAtualizado);
+
+        assertEquals(novoPin, cursoAtualizado.getPinAcesso());
     }
 
     // REQUISITO: Aprovar/rejeitar cursos (Administrador)
     @Test
     void aprovarCursoDeveMudarStatusParaAtivo() { // Lucas
-        // TODO: Testar a aprovação de um curso PENDENTE (ex: "c2"):
-        // 1. Chamar aprovarCurso() e verificar se o retorno é 'true'.
-        // 2. Recuperar o curso na persistência (dataManager).
-        // 3. Verificar se o status do curso mudou para ATIVO.
+        Curso cursoBase = cursoService.criarCurso("Curso Pendente", "Aguardando Aprovação", "prof-3");
+        String idCurso = cursoBase.getId();
+
+        assertEquals(StatusCurso.PENDENTE_APROVACAO, cursoBase.getStatus());
+
+        boolean sucesso = cursoService.aprovarCurso(idCurso);
+
+        assertTrue(sucesso);
+
+        Curso cursoAtualizado = dataManager.getCursoById(idCurso);
+        assertNotNull(cursoAtualizado);
+
+        assertEquals(StatusCurso.ATIVO, cursoAtualizado.getStatus());
     }
 
     @Test

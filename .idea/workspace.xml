@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3590f16-b743-46c4-a62e-f7306f2c9cec" name="Changes" comment="Preenchimento dos testes rejeitarCurso, visualizarCatalogo, ingressarComPinCorreto e ingressarComPinIncorreto">
-      <change beforePath="$PROJECT_DIR$/src/test/java/PostServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PostServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UsuarioServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UsuarioServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CursoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CursoServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,34 +38,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in CodefolioLite.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CursoServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CursoServiceTest.ingressarCursoSemPinDeveFuncionar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CursoServiceTest.rejeitarCursoDeveMudarStatusParaInativo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PostServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PostServiceTest.getCurtidasTotaisDeveRetornarSomaCorreta.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PostServiceTest.removerPostDeveRemoverPostExistente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PostServiceTest.removerPostInexistenteDeveRetornarFalso.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PostServiceTest.visualizarTodosDeveRetornarTodosOsPostsIniciais.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioServiceTest.alterarNivelAcessoDeveMudarOModeloDeUsuario.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioServiceTest.alterarNivelAcessoInexistenteDeveFalhar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UsuarioServiceTest.visualizarTodosDeveRetornarQuatroUsuariosIniciais.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CodefolioLite [test].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dyonathan/OneDrive/Desktop/VS_Code/rp2&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MainApp.executor": "Run",
+    "JUnit.All in CodefolioLite.executor": "Run",
+    "JUnit.CursoServiceTest.executor": "Run",
+    "JUnit.CursoServiceTest.ingressarCursoSemPinDeveFuncionar.executor": "Run",
+    "JUnit.CursoServiceTest.rejeitarCursoDeveMudarStatusParaInativo.executor": "Run",
+    "JUnit.PostServiceTest.executor": "Run",
+    "JUnit.PostServiceTest.getCurtidasTotaisDeveRetornarSomaCorreta.executor": "Run",
+    "JUnit.PostServiceTest.removerPostDeveRemoverPostExistente.executor": "Run",
+    "JUnit.PostServiceTest.removerPostInexistenteDeveRetornarFalso.executor": "Run",
+    "JUnit.PostServiceTest.visualizarTodosDeveRetornarTodosOsPostsIniciais.executor": "Run",
+    "JUnit.UsuarioServiceTest.alterarNivelAcessoDeveMudarOModeloDeUsuario.executor": "Run",
+    "JUnit.UsuarioServiceTest.alterarNivelAcessoInexistenteDeveFalhar.executor": "Run",
+    "JUnit.UsuarioServiceTest.executor": "Run",
+    "JUnit.UsuarioServiceTest.visualizarTodosDeveRetornarQuatroUsuariosIniciais.executor": "Run",
+    "Maven.CodefolioLite [test].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "F:/rp2",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="JUnit.All in CodefolioLite">
     <configuration name="All in CodefolioLite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodefolioLite" />
