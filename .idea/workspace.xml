@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3590f16-b743-46c4-a62e-f7306f2c9cec" name="Changes" comment="Preenchimento dos testes rejeitarCurso, visualizarCatalogo, ingressarComPinCorreto e ingressarComPinIncorreto">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CursoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CursoServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PostServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PostServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UsuarioServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UsuarioServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,18 +19,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "RaphaelAmaralNunes"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;RaphaelAmaralNunes&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/yIuriy/rp2.git",
-    "accountId": "1525085c-8309-40a0-867b-5a9b2d05ae98"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/yIuriy/rp2.git&quot;,
+    &quot;accountId&quot;: &quot;1525085c-8309-40a0-867b-5a9b2d05ae98&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -40,40 +43,45 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.MainApp.executor": "Run",
+    "JUnit.All in CodefolioLite.executor": "Run",
     "JUnit.CursoServiceTest.executor": "Run",
     "JUnit.CursoServiceTest.ingressarCursoSemPinDeveFuncionar.executor": "Run",
     "JUnit.CursoServiceTest.rejeitarCursoDeveMudarStatusParaInativo.executor": "Run",
     "JUnit.PostServiceTest.executor": "Run",
+    "JUnit.PostServiceTest.getCurtidasTotaisDeveRetornarSomaCorreta.executor": "Run",
     "JUnit.PostServiceTest.removerPostDeveRemoverPostExistente.executor": "Run",
     "JUnit.PostServiceTest.removerPostInexistenteDeveRetornarFalso.executor": "Run",
     "JUnit.PostServiceTest.visualizarTodosDeveRetornarTodosOsPostsIniciais.executor": "Run",
+    "JUnit.UsuarioServiceTest.alterarNivelAcessoDeveMudarOModeloDeUsuario.executor": "Run",
+    "JUnit.UsuarioServiceTest.alterarNivelAcessoInexistenteDeveFalhar.executor": "Run",
+    "JUnit.UsuarioServiceTest.executor": "Run",
+    "JUnit.UsuarioServiceTest.visualizarTodosDeveRetornarQuatroUsuariosIniciais.executor": "Run",
     "Maven.CodefolioLite [test].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Dyonathan/OneDrive/Desktop/VS_Code/rp2",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.CursoServiceTest">
+  <component name="RunManager" selected="JUnit.All in CodefolioLite">
+    <configuration name="All in CodefolioLite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodefolioLite" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CursoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodefolioLite" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CursoServiceTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CursoServiceTest.rejeitarCursoDeveMudarStatusParaInativo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodefolioLite" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CursoServiceTest" />
-      <option name="METHOD_NAME" value="rejeitarCursoDeveMudarStatusParaInativo" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,21 +95,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostServiceTest.removerPostDeveRemoverPostExistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UsuarioServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodefolioLite" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PostServiceTest" />
-      <option name="METHOD_NAME" value="removerPostDeveRemoverPostExistente" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="UsuarioServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostServiceTest.removerPostInexistenteDeveRetornarFalso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UsuarioServiceTest.alterarNivelAcessoInexistenteDeveFalhar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodefolioLite" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PostServiceTest" />
-      <option name="METHOD_NAME" value="removerPostInexistenteDeveRetornarFalso" />
+      <option name="MAIN_CLASS_NAME" value="UsuarioServiceTest" />
+      <option name="METHOD_NAME" value="alterarNivelAcessoInexistenteDeveFalhar" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -109,11 +116,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CursoServiceTest" />
+        <item itemvalue="JUnit.All in CodefolioLite" />
         <item itemvalue="JUnit.PostServiceTest" />
-        <item itemvalue="JUnit.CursoServiceTest.rejeitarCursoDeveMudarStatusParaInativo" />
-        <item itemvalue="JUnit.PostServiceTest.removerPostInexistenteDeveRetornarFalso" />
-        <item itemvalue="JUnit.PostServiceTest.removerPostDeveRemoverPostExistente" />
+        <item itemvalue="JUnit.UsuarioServiceTest" />
+        <item itemvalue="JUnit.CursoServiceTest" />
+        <item itemvalue="JUnit.UsuarioServiceTest.alterarNivelAcessoInexistenteDeveFalhar" />
       </list>
     </recent_temporary>
   </component>
@@ -150,5 +157,25 @@
     <MESSAGE value="Added mine test methods" />
     <MESSAGE value="Preenchimento dos testes rejeitarCurso, visualizarCatalogo, ingressarComPinCorreto e ingressarComPinIncorreto" />
     <option name="LAST_COMMIT_MESSAGE" value="Preenchimento dos testes rejeitarCurso, visualizarCatalogo, ingressarComPinCorreto e ingressarComPinIncorreto" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/service/UsuarioService.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/UsuarioServiceTest.java</url>
+          <line>54</line>
+          <properties class="UsuarioServiceTest" method="alterarNivelAcessoInexistenteDeveFalhar">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
