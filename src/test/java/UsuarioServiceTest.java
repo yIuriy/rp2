@@ -1,15 +1,17 @@
-import model.PapelUsuario;
-import model.Usuario;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import service.JsonDataManager;
-import service.UsuarioService;
-
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import model.PapelUsuario;
+import model.Usuario;
+import service.JsonDataManager;
+import service.UsuarioService;
 
 public class UsuarioServiceTest {
 
@@ -78,24 +80,40 @@ public class UsuarioServiceTest {
     // REQUISITO: Ordenar usuários por diferentes critérios (Admin)
     @Test
     void ordenarUsuariosPorNomeDeveFuncionar() { // Luiz
-        // TODO: Testar a ordenação de usuários por nome:
-        // 1. Chamar ordenarUsuarios("nome").
-        // 2. Verificar se os primeiros elementos da lista estão na ordem alfabética esperada (ex: "Ana Admin", "Bruno Professor").
-    }
+        List<Usuario> usuariosOrdenados = usuarioService.ordenarUsuarios("nome"); 
+        assertNotNull(usuariosOrdenados); 
+        assertTrue(usuariosOrdenados.size() >= 2); 
+        assertEquals("Ana Admin", usuariosOrdenados.get(0).getNome()); 
+        assertEquals("Bruno Professor", usuariosOrdenados.get(1).getNome()); 
+        assertTrue(usuariosOrdenados.get(0).getNome().compareTo(usuariosOrdenados.get(1).getNome()) < 0);
+    } 
 
     @Test
     void ordenarUsuariosPorPapelDeveFuncionar() { // Luiz
-        // TODO: Testar a ordenação de usuários por papel:
-        // 1. Chamar ordenarUsuarios("papel").
-        // 2. Verificar se os primeiros elementos da lista estão na ordem de papel esperada (ex: USUARIO_COMUM, ESTUDANTE).
+        List<Usuario> usuariosOrdenados = usuarioService.ordenarUsuarios("papel");
+        assertNotNull(usuariosOrdenados); 
+        assertTrue(usuariosOrdenados.size() >= 4); 
+        assertEquals(PapelUsuario.USUARIO_COMUM, usuariosOrdenados.get(0).getPapel()); 
+        assertEquals("Daniel Comum", usuariosOrdenados.get(0).getNome()); 
+        assertEquals(PapelUsuario.ESTUDANTE, usuariosOrdenados.get(1).getPapel()); 
+        assertEquals("Carla Estudante", usuariosOrdenados.get(1).getNome()); 
+        assertEquals(PapelUsuario.PROFESSOR, usuariosOrdenados.get(2).getPapel()); 
+        assertEquals(PapelUsuario.ADMINISTRADOR, usuariosOrdenados.get(3).getPapel()); 
     }
+    
 
     // REQUISITO: Editar informações pessoais (Usuário Comum)
     @Test
     void editarPerfilDeveMudarONomeDoUsuario() { // Luiz
-        // TODO: Testar a edição de informações de perfil (ex: mudar o nome do "u4"):
-        // 1. Chamar editarPerfil() e verificar se retorna 'true'.
-        // 2. Recuperar o usuário na persistência (dataManager).
-        // 3. Verificar se o nome do usuário foi atualizado corretamente.
+        String idUsuarioParaEditar = "u4"; 
+        String novoNome = "Daniel Comum Editado";
+        boolean sucesso = usuarioService.editarPerfil(idUsuarioParaEditar, novoNome); 
+        assertTrue(sucesso);
+        Optional<Usuario> usuarioOptional = dataManager.getUsuarios().stream() 
+                .filter(u -> u.getId().equals(idUsuarioParaEditar)) 
+                .findFirst(); 
+        assertTrue(usuarioOptional.isPresent()); 
+        Usuario usuarioDepois = usuarioOptional.get(); 
+        assertEquals(novoNome, usuarioDepois.getNome()); 
     }
 }
