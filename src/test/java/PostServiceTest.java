@@ -44,7 +44,6 @@ public class PostServiceTest {
 
     @Test
     void removerPostInexistenteDeveRetornarFalso() { // Iuri
-        // TODO: Testar a remoção de um post que não existe:
         boolean postRemovido = postService.removerPost("p999");
         assertFalse(postRemovido);
     }
@@ -58,6 +57,10 @@ public class PostServiceTest {
         assertTrue(postOpcional.isPresent());
         Post post = postOpcional.get();
         int curtidasIniciais = post.getCurtidas();
+        assertEquals(curtidasIniciais, post.getCurtidas());
+        post.incrementarCurtidas();
+        int curtidasFinais = post.getCurtidas();
+        assertEquals(curtidasIniciais + 1, curtidasFinais);
     }
 
     // REQUISITO: Filtrar artigos por temas/tags (Usuário Comum)

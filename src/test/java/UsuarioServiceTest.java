@@ -52,28 +52,19 @@ public class UsuarioServiceTest {
     // REQUISITO: Filtrar e buscar usuários por nome, email ou papel (Admin)
     @Test
     void buscarUsuariosDeveFiltrarPorNome() { // Guilherme
-        // TODO: Testar a busca de usuários por parte do nome (ex: "ana"):
-        // 1. Chamar buscarUsuarios("ana", null).
         List<Usuario> usuariosFiltrados = usuarioService.buscarUsuarios("ana", null);
-        // 2. Verificar se a lista retornada tem o tamanho correto (1) e o nome do usuário está correto.
         assertEquals(1, usuariosFiltrados.size());
     }
 
     @Test
     void buscarUsuariosDeveFiltrarPorEmail() { // Guilherme
-        // TODO: Testar a busca de usuários por parte do email (ex: "@codefolio.com"):
-        // 1. Chamar buscarUsuarios("@codefolio.com", null).
         List<Usuario> usuariosFiltrados = usuarioService.buscarUsuarios("@codefolio.com", null);
-        // 2. Verificar se a lista retornada tem o tamanho correto (4).
         assertEquals(4, usuariosFiltrados.size());
     }
 
     @Test
     void buscarUsuariosDeveFiltrarPorPapel() { // Guilherme
-        // TODO: Testar a busca de usuários por PapelUsuario (ex: PROFESSOR):
-        // 1. Chamar buscarUsuarios(null, PapelUsuario.PROFESSOR).
         List<Usuario> usuariosFiltrados = usuarioService.buscarUsuarios(null, PapelUsuario.PROFESSOR);
-        // 2. Verificar se a lista retornada tem o tamanho correto (1) e o papel do usuário está correto.
         assertEquals(1, usuariosFiltrados.size());
     }
 
@@ -99,7 +90,6 @@ public class UsuarioServiceTest {
         assertEquals(PapelUsuario.PROFESSOR, usuariosOrdenados.get(2).getPapel()); 
         assertEquals(PapelUsuario.ADMINISTRADOR, usuariosOrdenados.get(3).getPapel()); 
     }
-    
 
     // REQUISITO: Editar informações pessoais (Usuário Comum)
     @Test

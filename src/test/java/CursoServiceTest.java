@@ -6,6 +6,7 @@ import service.CursoService;
 import service.JsonDataManager;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,6 +20,7 @@ public class CursoServiceTest {
         this.dataManager = new JsonDataManager();
         this.cursoService = new CursoService(dataManager);
     }
+
     private Optional<Curso> findCursoInList(String id) {
         return dataManager.getCursos().stream()
                 .filter(curso -> curso.getId().equals(id))
@@ -104,7 +106,6 @@ public class CursoServiceTest {
 
         assertEquals(StatusCurso.ATIVO, cursoAtualizadoOpt.get().getStatus());
     }
-}
 
     @Test
     void rejeitarCursoDeveMudarStatusParaInativo() { // Raphael

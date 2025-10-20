@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3590f16-b743-46c4-a62e-f7306f2c9cec" name="Changes" comment="Preenchimento dos testes rejeitarCurso, visualizarCatalogo, ingressarComPinCorreto e ingressarComPinIncorreto">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CursoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CursoServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PostServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PostServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UsuarioServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UsuarioServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +47,7 @@
     "JUnit.CursoServiceTest.executor": "Run",
     "JUnit.CursoServiceTest.ingressarCursoSemPinDeveFuncionar.executor": "Run",
     "JUnit.CursoServiceTest.rejeitarCursoDeveMudarStatusParaInativo.executor": "Run",
+    "JUnit.PostServiceTest.curtirPostDeveIncrementarContadorDeCurtidas.executor": "Run",
     "JUnit.PostServiceTest.executor": "Run",
     "JUnit.PostServiceTest.filtrarPorTagDeveIgnorarCaseSensitivity.executor": "Run",
     "JUnit.PostServiceTest.getCurtidasTotaisDeveRetornarSomaCorreta.executor": "Run",
@@ -66,15 +70,7 @@
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.PostServiceTest.filtrarPorTagDeveIgnorarCaseSensitivity">
-    <configuration name="All in CodefolioLite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodefolioLite" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PostServiceTest.curtirPostDeveIncrementarContadorDeCurtidas">
     <configuration name="CursoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodefolioLite" />
       <option name="PACKAGE_NAME" value="" />
@@ -89,6 +85,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PostServiceTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostServiceTest.curtirPostDeveIncrementarContadorDeCurtidas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodefolioLite" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PostServiceTest" />
+      <option name="METHOD_NAME" value="curtirPostDeveIncrementarContadorDeCurtidas" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -114,20 +120,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PostServiceTest.filtrarPorTagDeveIgnorarCaseSensitivity" />
-        <item itemvalue="JUnit.All in CodefolioLite" />
-        <item itemvalue="JUnit.PostServiceTest" />
+        <item itemvalue="JUnit.PostServiceTest.curtirPostDeveIncrementarContadorDeCurtidas" />
         <item itemvalue="JUnit.UsuarioServiceTest" />
+        <item itemvalue="JUnit.PostServiceTest" />
         <item itemvalue="JUnit.CursoServiceTest" />
+        <item itemvalue="JUnit.PostServiceTest.filtrarPorTagDeveIgnorarCaseSensitivity" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -170,20 +169,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/service/UsuarioService.java</url>
           <line>23</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/PostServiceTest.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/UsuarioServiceTest.java</url>
-          <line>45</line>
-          <properties class="UsuarioServiceTest" method="alterarNivelAcessoInexistenteDeveFalhar">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
