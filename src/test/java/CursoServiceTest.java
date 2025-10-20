@@ -19,8 +19,12 @@ public class CursoServiceTest {
         this.dataManager = new JsonDataManager();
         this.cursoService = new CursoService(dataManager);
     }
+    private Optional<Curso> findCursoInList(String id) {
+        return dataManager.getCursos().stream()
+                .filter(curso -> curso.getId().equals(id))
+                .findFirst();
+    }
 
-    // REQUISITO: Criar novos cursos (Professor)
     @Test
     void criarCursoDeveAdicionarNovoCursoAPersistencia() { // Lucas
         int tamanhoInicial = dataManager.getCursos().size();
@@ -31,10 +35,11 @@ public class CursoServiceTest {
         Curso novoCurso = cursoService.criarCurso(titulo, desc, profId);
 
         assertNotNull(novoCurso);
-        assertNotNull(novoCurso.getId());
+        assertEquals("c4", novoCurso.getId());
 
-        Curso cursoPersistido = dataManager.getCursoById(novoCurso.getId());
-        assertNotNull(cursoPersistido);
+        Optional<Curso> cursoPersistidoOpt = findCursoInList(novoCurso.getId());
+        assertTrue(cursoPersistidoOpt.isPresent(), "Curso criado não foi encontrado na persistência.");
+        Curso cursoPersistido = cursoPersistidoOpt.get();
 
         assertEquals(titulo, cursoPersistido.getTitulo());
         assertEquals(desc, cursoPersistido.getDescricao());
@@ -45,60 +50,61 @@ public class CursoServiceTest {
         assertEquals(tamanhoInicial + 1, tamanhoFinal);
     }
 
-    // REQUISITO: Editar cursos existentes (Professor/Admin)
     @Test
     void editarCursoDeveAtualizarTituloEDescricao() { // Lucas
-        Curso cursoBase = cursoService.criarCurso("Título Antigo", "Descrição Antiga", "prof-1");
-        String idCurso = cursoBase.getId();
+        String idCurso = "c1";
         String novoTitulo = "Título Atualizado";
         String novaDescricao = "Descrição Atualizada";
 
         boolean sucesso = cursoService.editarCurso(idCurso, novoTitulo, novaDescricao);
 
-        assertTrue(sucesso);
+        assertTrue(sucesso, "Método editarCurso() deveria retornar true.");
 
-        Curso cursoAtualizado = dataManager.getCursoById(idCurso);
-        assertNotNull(cursoAtualizado);
+        Optional<Curso> cursoAtualizadoOpt = findCursoInList(idCurso);
+        assertTrue(cursoAtualizadoOpt.isPresent(), "Curso 'c1' não foi encontrado.");
+        Curso cursoAtualizado = cursoAtualizadoOpt.get();
 
         assertEquals(novoTitulo, cursoAtualizado.getTitulo());
         assertEquals(novaDescricao, cursoAtualizado.getDescricao());
     }
 
-    // REQUISITO: Configurar proteção por PIN de acesso (Professor)
     @Test
     void configurarPinDeveAdicionarPinAoCurso() { // Lucas
-        Curso cursoBase = cursoService.criarCurso("Curso Protegido", "Desc", "prof-2");
-        String idCurso = cursoBase.getId();
+        String idCurso = "c1";
         String novoPin = "9876";
 
-        assertNull(cursoBase.getPinAcesso());
+        Optional<Curso> cursoBaseOpt = findCursoInList(idCurso);
+        assertTrue(cursoBaseOpt.isPresent());
+        assertNull(cursoBaseOpt.get().getPinAcesso(), "PIN de 'c1' deveria ser nulo inicialmente.");
 
         boolean sucesso = cursoService.configurarPin(idCurso, novoPin);
-        assertTrue(sucesso);
 
-        Curso cursoAtualizado = dataManager.getCursoById(idCurso);
-        assertNotNull(cursoAtualizado);
+        assertTrue(sucesso, "Método configurarPin() deveria retornar true.");
 
-        assertEquals(novoPin, cursoAtualizado.getPinAcesso());
+        Optional<Curso> cursoAtualizadoOpt = findCursoInList(idCurso);
+        assertTrue(cursoAtualizadoOpt.isPresent(), "Curso 'c1' não foi encontrado.");
+
+        assertEquals(novoPin, cursoAtualizadoOpt.get().getPinAcesso());
     }
 
-    // REQUISITO: Aprovar/rejeitar cursos (Administrador)
     @Test
     void aprovarCursoDeveMudarStatusParaAtivo() { // Lucas
-        Curso cursoBase = cursoService.criarCurso("Curso Pendente", "Aguardando Aprovação", "prof-3");
-        String idCurso = cursoBase.getId();
+        String idCurso = "c2";
 
-        assertEquals(StatusCurso.PENDENTE_APROVACAO, cursoBase.getStatus());
+        Optional<Curso> cursoBaseOpt = findCursoInList(idCurso);
+        assertTrue(cursoBaseOpt.isPresent());
+        assertEquals(StatusCurso.PENDENTE_APROVACAO, cursoBaseOpt.get().getStatus(), "Status inicial de 'c2' deveria ser PENDENTE.");
 
         boolean sucesso = cursoService.aprovarCurso(idCurso);
 
-        assertTrue(sucesso);
+        assertTrue(sucesso, "Método aprovarCurso() deveria retornar true.");
 
-        Curso cursoAtualizado = dataManager.getCursoById(idCurso);
-        assertNotNull(cursoAtualizado);
+        Optional<Curso> cursoAtualizadoOpt = findCursoInList(idCurso);
+        assertTrue(cursoAtualizadoOpt.isPresent(), "Curso 'c2' não foi encontrado.");
 
-        assertEquals(StatusCurso.ATIVO, cursoAtualizado.getStatus());
+        assertEquals(StatusCurso.ATIVO, cursoAtualizadoOpt.get().getStatus());
     }
+}
 
     @Test
     void rejeitarCursoDeveMudarStatusParaInativo() { // Raphael
