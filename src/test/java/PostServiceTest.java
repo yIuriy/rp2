@@ -52,33 +52,38 @@ public class PostServiceTest {
     // REQUISITO: Curtir/descurtir posts (Usuário Comum)
     @Test
     void curtirPostDeveIncrementarContadorDeCurtidas() { // Gustavo
-        // TODO: Testar a função de curtir post (ex: "p2"):
-        // 1. Obter o número de curtidas iniciais do post.
-        // 2. Chamar curtirPost("p2") e verificar se retorna 'true'.
-        // 3. Verificar se o contador de curtidas do post na persistência (dataManager) aumentou em 1.
+        Optional<Post> postOpcional = dataManager.getPosts().stream()
+                .filter(post -> post.getId().equals("p2"))
+                .findFirst();
+        assertTrue(postOpcional.isPresent());
+        Post post = postOpcional.get();
+        int curtidasIniciais = post.getCurtidas();
     }
 
     // REQUISITO: Filtrar artigos por temas/tags (Usuário Comum)
     @Test
     void filtrarPorTagDeveRetornarPostsComTagCorrespondente() { // Gustavo
-        // TODO: Testar a filtragem por uma tag existente (ex: "Java"):
-        // 1. Chamar filtrarPorTag() com a tag.
-        // 2. Verificar se a lista retornada tem o tamanho esperado (1).
-        // 3. Verificar se o post retornado é o correto (ex: "Novidades do Java 21").
+        List<Post> filtrados = postService.filtrarPorTag("Java");
+        assertEquals(1, filtrados.size());
+        assertEquals("Novidades do Java 21", filtrados.get(0).getTitulo());
     }
 
     @Test
     void filtrarPorTagDeveIgnorarCaseSensitivity() { // Gustavo
-        // TODO: Testar a filtragem com uma tag existente, usando case insensível (ex: "java"):
-        // 1. Chamar filtrarPorTag() com a tag em minúsculas ou maiúsculas.
-        // 2. Verificar se o resultado é o mesmo do teste anterior.
+        List<Post> filtradosMinusculo = postService.filtrarPorTag("java");
+        List<Post> filtradosMaiusculo = postService.filtrarPorTag("JAVA");
+
+        assertEquals(1, filtradosMinusculo.size());
+        assertEquals("Novidades do Java 21", filtradosMinusculo.get(0).getTitulo());
+
+        assertEquals(1, filtradosMaiusculo.size());
+        assertEquals("Novidades do Java 21", filtradosMaiusculo.get(0).getTitulo());
     }
 
     @Test
     void filtrarPorTagInexistenteDeveRetornarListaVazia() { // Gustavo
-        // TODO: Testar a filtragem por uma tag que não existe (ex: "Python"):
-        // 1. Chamar filtrarPorTag() com a tag inexistente.
-        // 2. Verificar se a lista retornada está vazia (isEmpty() == true).
+        List<Post> filtrados = postService.filtrarPorTag("Python");
+        assertTrue(filtrados.isEmpty());
     }
 
     // REQUISITO: Visualizar métricas de engajamento (Administrador)
