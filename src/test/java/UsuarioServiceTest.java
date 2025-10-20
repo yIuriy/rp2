@@ -87,7 +87,6 @@ public class UsuarioServiceTest {
         assertEquals("Bruno Professor", usuariosOrdenados.get(1).getNome()); 
         assertTrue(usuariosOrdenados.get(0).getNome().compareTo(usuariosOrdenados.get(1).getNome()) < 0);
     } 
-
     @Test
     void ordenarUsuariosPorPapelDeveFuncionar() { // Luiz
         List<Usuario> usuariosOrdenados = usuarioService.ordenarUsuarios("papel");
